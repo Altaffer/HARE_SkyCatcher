@@ -5,7 +5,7 @@
 IP=$(ifconfig wlp0s20f3 | grep -E -o -m 1 "(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])" | head -1)
 
 echo "waiting for jetson to connect"
-sleep 10
+# sleep 10
 
 echo "looking for jetson"
 # find the jetson ip

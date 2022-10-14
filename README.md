@@ -11,3 +11,4 @@ sudo /sys/devices/50000000.host1x/546c0000.i2c/i2c-6/6-0040/iio:device0# cat in_
 screen /dev/ttyUSB0 115200
 jetson
 Astro
+within the lab try ssh jetson@128.114.204.137

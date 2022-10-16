@@ -1,0 +1,11 @@
+[] inspect data for good numbers
+	good gps accuracy ( <1m of covariance )
+	thermal camera worked for the whole flight
+	
+[] upload bags to https://harelab-files.soe.ucsc.edu/files/
+	follow naming and folder conventions
+
+[] upload click data to https://harelab-files.soe.ucsc.edu/files/
+	check meta.txt for number
+	upload corresponding number to server
+	follow naming and folder conventions

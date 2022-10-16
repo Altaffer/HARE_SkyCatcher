@@ -1,0 +1,22 @@
+====================
+preflight checks
+====================
+
+
+packing list
+
+[] base bucket
+
+[] laptop with updated sky catcher
+
+[] ssd for recordings
+
+[] batteries for drone
+
+[] talk to people in flight vacinity and inform of drone work
+
+[] power on jetson on ground (let gps warm up, ~10min)
+
+[] <ADD OTHER THINGS WE DISCOVER OVER TIME>
+
+

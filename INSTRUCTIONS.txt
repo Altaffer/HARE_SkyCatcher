@@ -1,0 +1,63 @@
+Follow this checklist to succeed
+
+[] Open this checklist in a new window for continued refrence
+
+[] Start up basestation software (./basstation) and look for "beep boop 1337 hax" 
+	This nonsense means yoursystem is setup and ready for connecting to the jetson
+	You will be prompted to enter a password for the jetson, its "Astro"
+
+[] Figure out what the ssd has enumerated as
+	cd /media/jetson
+	It should be "hareflightdisk00X", cd into the disk with the highest "X" 
+	There should be some bag files in there 
+
+[] Navigate and update the topic_check.py
+	change RECORDING_LOCATION to the correct path as noted earlier
+
+[] Check flightdata.sh for these nodes 
+	cat flightdata.sh (prints the file to your terminal)
+	camera node
+	ublox node (zed f9p)
+	dji node
+	micasense
+
+[] Cool now you are almost ready to go
+[] You need to run two scripts, I use tmux and split the terminal, one for each script
+
+[] ./flightdata.sh
+
+[] python3 topic_check.py
+	wait for "go for flight"
+
+[] GO FLY
+
+
+[] ./killfdata.sh
+
+[] Awesome check the bag for thermal camera data
+
+
+TROUBLESHOOTING
+
+
+[] IF THE FLIR FELL OFF (lost data at some point)
+	fly again
+	use tmux to open a new terminal
+	dmesg --follow
+		this will show you major changes and errors, flir falling off will show up here
+
+
+[] SSH back to the jetson
+	./ssh_to_jetson.sh
+
+[] Jetson not connecting over wifi
+	plug into ftdi
+	screen /dev/ttyUSB0 115200
+	ip a (it should be wlan0 inet 10.42.0.XXX/24)
+		if its not that ip or a very similar ip use the ip reset script on wlan0
+	sudo nmcli con delete hare_hotspot
+	sudo nmcli dev wifi connect hare_hotspot password "hare-field"
+
+	you should be good to ssh again
+
+
